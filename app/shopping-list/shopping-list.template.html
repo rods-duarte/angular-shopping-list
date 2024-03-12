@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="shopping-list">
+        <h1>Shopping List</h1>
+    
+        <ul class="list">
+            <li class="item" ng-repeat="item in $ctrl.items track by item.id">
+                <span>{{item.name}}</span>
+                <a href="#" class="delete-item-button" ng-click="$ctrl.deleteItem(item)">x</a>
+            </li>
+        </ul>
+    </div>
+
+    <form ng-submit="$ctrl.addNewItem()">
+        <input type="text" placeholder="Add shopping items here" ng-model="$ctrl.newItem" required>
+        <button type="submit" ng-disabled="!$ctrl.newItem">Add</button>
+    </form>
+</div>
